@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <title>Capstone Project</title>
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+   </head>
+   <body>
+      <h1 style="text-align:center;">Welcome ToLittleLemon Restaurant</h1>
+      <!--add this template tag-->
+      {% load static %}
+      <img src="{% static 'img/logo.png' %}">   
+
+
+      <h2>Reserva de Mesa</h2>
+      <form id="reservation-form" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Registrar Reserva</button>
+          
+      </form>
+
+         <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- jQuery UI -->
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <script>
+         $(function() {
+             // Selector de fecha para el campo "date"
+             $("#id_date").datepicker();
+         });
+     </script>
+     
+    </body>
+    
+</html>
